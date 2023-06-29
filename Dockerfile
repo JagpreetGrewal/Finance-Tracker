@@ -9,6 +9,7 @@ FROM debian:latest as builder
 
 # Set working directory
 WORKDIR /app
+RUN mkdir -p bin
 
 # Copy source code
 COPY src/ /app/src/
