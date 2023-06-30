@@ -1,5 +1,8 @@
 #include <iostream>
 #include <sqlite3.h> // SQLite library header
+#include <chrono>
+#include <thread>
+
 
 // Function to add an expense
 void addExpense(sqlite3* db)
@@ -90,6 +93,8 @@ int main()
 
     // Application loop
     int choice;
+    std::cout<<"Loading for 10 seconds..."<<std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(10000));
     while (true)
     {
         // Display menu options
@@ -117,5 +122,6 @@ int main()
                 std::cout << "Invalid choice. Please try again." << std::endl;
                 break;
         }
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }
