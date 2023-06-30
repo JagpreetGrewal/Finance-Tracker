@@ -120,6 +120,8 @@ int main()
                 return 0;
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 break;
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
