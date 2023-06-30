@@ -1,8 +1,15 @@
+# Run using $ sudo docker-compose build and $ sudo docker-compose up. Run detached using $ sudo docker-compose up -d
+
+# Delete containers by running $ sudo docker ps -a and $ sudo docker stop <container_id> and $ sudo docker rm <container_id>
+# and $ sudo docker images and $ sudo docker rmi <image_id>
+# can also delete images by using the -f force command i.e. $ sudo docker rmi -f <image_id>
+
 # Stage 1: Build the application
 FROM debian:latest as builder
 
 # Set working directory
 WORKDIR /app
+RUN mkdir -p bin
 
 # Copy source code
 COPY src/ /app/src/
